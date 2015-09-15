@@ -1,0 +1,66 @@
+#mysql 数据 镜像
+mysql_data:
+  image: docker.io/busybox:latest
+  volumes:
+  - ./mysql_data:/var/lib/mysql
+
+#mysql 程序 镜像
+mysql_server:
+  image: docker.io/mysql:latest
+  volumes_from:
+  - mysql_data
+  environment:
+  - MYSQL_ROOT_PASSWORD=g1a35h8s31h8
+
+#mongodb 数据 镜像
+mongodb_data:
+  image: docker.io/busybox:latest
+  volumes:
+  - ./mongodb_data:/data/db
+
+#mongodb 程序 镜像
+mongodb_server:
+  image: docker.io/mongo:latest
+  volumes_from:
+  - mongodb_data
+
+#网页 脚本 镜像
+www_php: 
+  image: docker.io/busybox:latest
+  volumes:
+  - ./www_php:/var/www/html
+
+#php 程序 镜像
+php_fpm:
+  image: q84629462/php-with-mongo-extension:5.6.12-fpm-0.2
+  volumes_from:
+  - www_php
+  links:
+  - mysql_server:mysql
+  - mongodb_server:mongodb
+
+#nodejs script file
+www_nodejs: 
+  image: docker.io/busybox:latest
+  volumes:
+  - ./www_nodejs:/usr/src/myapp
+
+#nodejs program file
+nodejs:
+  build: /build/nodejs
+  image: q84629462/node-with-supervisor:latest
+  volumes_from:
+  - www_nodejs
+  command: "node /usr/src/myapp/index.js"
+
+nginx:
+  image: docker.io/nginx:latest
+  volumes:
+  - ./nginx_conf:/etc/nginx/conf.d
+  volumes_from:
+  - wwwroot_data
+  links:
+  - php_fpm:php
+  - nodejs
+  ports:
+  - "80:80"
