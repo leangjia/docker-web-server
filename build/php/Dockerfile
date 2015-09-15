@@ -27,7 +27,7 @@ RUN buildDeps=" \
     && echo "extension=mongo.so" > /usr/local/etc/php/conf.d/mongo.ini\
     && apt-get purge -y --auto-remove $buildDeps \
     && cd /usr/src/php \
-    && make clean \
+    && make clean
 
 # Setup timezone to Asia/Shanghai
 RUN cat /usr/src/php/php.ini-production | sed 's/^;\(date.timezone.*\)/\1 \"Asia\/Shanghai\"/' > /usr/local/etc/php/php.ini
