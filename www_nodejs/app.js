@@ -1,3 +1,8 @@
+/**
+    https://github.com/gzlock
+    MIT License
+*/
+
 var http = require("http"),
     fs = require('fs');
 
