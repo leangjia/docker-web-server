@@ -32,7 +32,7 @@ www_php:
 
 #php program image
 php_fpm:
-  build: ./build_image/php_image
+  build: ./build/php
   volumes_from:
   - www_php
   links:
@@ -47,7 +47,7 @@ www_nodejs:
 
 #nodejs program image
 nodejs:
-  build: ./build_image/nodejs_image
+  build: ./build/nodejs
   volumes_from:
   - www_nodejs
   command: "node /usr/src/myapp/index.js"
