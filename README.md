@@ -8,15 +8,15 @@ Docker images with:
 - docker.io/BusyBox:latest
 
 ### About Path:
-- ./buil						Build the Nodejs and PHP images folder
+- ./build						Build the Nodejs and PHP images folder
 - ./nginx_conf			Nginx host config files folder
-- ./www_ph					PHP website files folder
+- ./www_php					PHP website files folder
 - ./www_nodejs			Nodejs website files folder
 - ./mysql_data			MySQL data folder
 - ./mongodb_data		MonboDB data folder
 
 ### How to use:
-- git q84629462/docker
+- git q84629462/docker-web-server
 - docker-compose up -d
 
 ### License:MIT
