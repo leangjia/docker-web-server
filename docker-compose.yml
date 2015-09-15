@@ -32,7 +32,7 @@ www_php:
 
 #php program image
 php_fpm:
-  image: ./build/php
+  build: ./build/php
   volumes_from:
   - www_php
   links:
@@ -60,7 +60,8 @@ nginx:
   - ./nginx_conf:/etc/nginx/conf.d
   volumes_from:
   - www_php
-  - www_nodejs
+  #Not required
+  #- www_nodejs 
   links:
   - php_fpm:php
   - nodejs
