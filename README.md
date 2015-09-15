@@ -6,6 +6,7 @@ Docker images with:
 - docker.io/MongoDB:latest
 - docker.io/MySQL:latest
 - docker.io/BusyBox:latest
+
 ### About Path:
 - ./buil						Build the Nodejs and PHP images folder
 - ./nginx_conf			Nginx host config files folder
@@ -13,7 +14,9 @@ Docker images with:
 - ./www_nodejs			Nodejs website files folder
 - ./mysql_data			MySQL data folder
 - ./mongodb_data		MonboDB data folder
+
 ### How to use:
 - git q84629462/docker
 - docker-compose up -d
+
 ### License:MIT
