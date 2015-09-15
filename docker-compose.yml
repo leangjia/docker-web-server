@@ -50,6 +50,7 @@ nodejs:
   build: ./build/nodejs
   volumes_from:
   - www_nodejs
+  restart: always
   command: "node /usr/src/myapp/index.js"
 
 #nginx programe image
