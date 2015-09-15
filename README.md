@@ -16,7 +16,7 @@ Docker images with:
 - ./mongodb_data		MonboDB data folder
 
 ### How to use:
-- git q84629462/docker-web-server
+- git gzlock/docker-web-server
 - docker-compose up -d
 
 ### License:MIT
