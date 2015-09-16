@@ -16,10 +16,10 @@ Docker images with:
 - ./mongodb_data		MonboDB data folder
 
 ### How to use:
-- git gzlock/docker-web-server
+- git clone https://github.com/gzlock/docker-web-server.git
 - docker-compose up -d
 
 ### BTW
 /build/php/Dockerfile come from TommyLau
 
-### License:MIT
+### MIT License
