@@ -3,11 +3,11 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-    res.end(new Date().toString());
+    res.end('Hello, World!');
 });
 
-app.get('/a', function (req, res) {
-    res.end('/a');
+app.get('/node', function (req, res) {
+    res.end('/node');
 });
 
 module.exports = app;
