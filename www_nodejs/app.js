@@ -47,7 +47,7 @@ var server = http.createServer(function (request, response) {
 
     if (isFail) {//fail
         response.writeHead(404, {'Content-Type': 'text/plain'});
-        response.end();
+        response.end('404:'+host+indexFile);
     }
 });
 
