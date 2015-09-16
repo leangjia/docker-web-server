@@ -1,6 +1,6 @@
 FROM docker.io/node:latest
 
-MAINTAINER <q84629462> srleo@qq.com
+MAINTAINER <gzlock> gzlock88@gmail.com
 
 #install golbal plugin 
 RUN npm install -g express mongoose body-parser cookie-parser
