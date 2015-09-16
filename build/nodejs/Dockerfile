@@ -2,6 +2,9 @@ FROM docker.io/node:latest
 
 MAINTAINER <gzlock> gzlock88@gmail.com
 
+RUN mkdir -p /usr/src/myapp/host
+
+COPY ./app.js /usr/src/myapp
 
 #install golbal plugin 
-RUN mkdir -p /usr/src/myapp && cd /usr/src/myapp && npm install express mongoose body-parser cookie-parser
+RUN cd /usr/src/myapp && npm install express mongoose body-parser cookie-parser
