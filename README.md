@@ -17,6 +17,7 @@ Docker images with:
 
 ### How to use:
 - git clone https://github.com/gzlock/docker-web-server.git
+- cd ./docker-web-server/
 - docker-compose up -d
 
 ### BTW
