@@ -13,41 +13,35 @@ var index = '/index.js';
 
 var server = http.createServer(function (request, response) {
     var host = getHost(request),
-        indexFile = './' + host + index,
+        indexFile = __dirname + '/' + host + index,
         isExists = fs.existsSync(indexFile),
         isFail = true;
 
     if (isExists) {//target file is exists
-        var fullPath = fs.realpathSync(indexFile),
-            hasCache = require.cache.hasOwnProperty(fullPath);
+        var hasCache = require.cache.hasOwnProperty(indexFile);
 
         if (hasCache) {// has requrie cache
-            if (isModified(fullPath)) {//target file is modified
-                delete require.cache[fullPath];//delete cache
+            if (isModified(indexFile)) {//target file is modified
+                delete require.cache[indexFile];//delete cache
             }
         }
 
         var app = require(indexFile, request, response);
 
-        if (!require.cache[fullPath].hasOwnProperty('mtime')) {//add the target file modified time to cache object prototype
-            require.cache[fullPath]['mtime'] = getModifiedTime(fullPath);
+        if (!require.cache[indexFile].hasOwnProperty('mtime')) {//add the target file modified time to cache object prototype
+            require.cache[indexFile]['mtime'] = getModifiedTime(indexFile);
         }
 
         if (app) {
-            try {
-                app.apply(this, arguments);
-            } catch (e) {
-                throw e;
-            } finally {
-                isFail = false;
-            }
+            app.apply(this, arguments);
+            isFail = false;
         }
 
     }
 
     if (isFail) {//fail
         response.writeHead(404, {'Content-Type': 'text/plain'});
-        response.end('404:'+host+indexFile);
+        response.end('404:'+indexFile);
     }
 });
 
