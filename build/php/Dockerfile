@@ -1,5 +1,7 @@
 FROM docker.io/php:5.6.12-fpm
 
+MAINTAINER <gzlock> gzlock88@gmail.com
+
 # Install other needed extensions
 RUN apt-get update && apt-get install -y libfreetype6 libjpeg62-turbo libmcrypt4 libpng12-0 sendmail libssl-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
 RUN buildDeps=" \
