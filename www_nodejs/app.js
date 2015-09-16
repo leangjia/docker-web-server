@@ -6,6 +6,8 @@
 var http = require("http"),
     fs = require('fs');
 
+var port = process.env.PORT | 8080;
+
 //the domain folder main file name
 var index = '/index.js';
 
@@ -49,7 +51,7 @@ var server = http.createServer(function (request, response) {
     }
 });
 
-server.listen(8080);
+server.listen(port);
 server.on('error', onError);
 
 /**
