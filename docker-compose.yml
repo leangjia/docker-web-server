@@ -44,7 +44,7 @@ php_fpm:
 www_nodejs: 
   image: docker.io/busybox:latest
   volumes:
-  - ./www_nodejs:/usr/src/myapp
+  - ./www_nodejs:/usr/src/myapp/host
 
 #nodejs program image
 nodejs:

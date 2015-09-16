@@ -6,14 +6,15 @@
 var http = require("http"),
     fs = require('fs');
 
-var port = process.env.PORT || 8080;
+//var port = process.env.PORT || 8080;
+var port = 8080;
 
 //the domain folder main file name
 var index = '/index.js';
 
 var server = http.createServer(function (request, response) {
     var host = getHost(request),
-        indexFile = __dirname + '/' + host + index,
+        indexFile = __dirname + '/host/' + host + index,
         isExists = fs.existsSync(indexFile),
         isFail = true;
 

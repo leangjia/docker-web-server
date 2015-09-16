@@ -4,7 +4,7 @@ MAINTAINER <gzlock> gzlock88@gmail.com
 
 RUN mkdir -p /usr/src/myapp/host
 
-COPY ./app.js /usr/src/myapp
+COPY ./app.js /usr/src/myapp/app.js
 
-#install golbal plugin 
+#install plugin 
 RUN cd /usr/src/myapp && npm install express mongoose body-parser cookie-parser
