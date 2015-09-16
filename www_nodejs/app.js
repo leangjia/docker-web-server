@@ -6,7 +6,7 @@
 var http = require("http"),
     fs = require('fs');
 
-var port = process.env.PORT | 8080;
+var port = process.env.PORT || 8080;
 
 //the domain folder main file name
 var index = '/index.js';
