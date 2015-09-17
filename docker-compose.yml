@@ -58,6 +58,11 @@ nodejs:
   - mysql_server:mysql
   - mongodb_server:mongodb
 
+mongo_express:
+  image: knickers/mongo-express
+  links:
+  -mongodb_server:mongo
+
 #nginx programe image
 nginx:
   image: docker.io/nginx:latest
@@ -65,10 +70,12 @@ nginx:
   - ./nginx_conf:/etc/nginx/conf.d
   volumes_from:
   - www_php
-  #Not required
-  #- www_nodejs 
   links:
+  # port 9000
   - php_fpm:php
+  # port 80
   - nodejs
+  # port 8081
+  - mongo_express
   ports:
   - "80:80"
