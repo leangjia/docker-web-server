@@ -60,6 +60,7 @@ nodejs:
 
 mongo_express:
   image: knickers/mongo-express
+  restart: always
   links:
   - mongodb_server:mongo
 
