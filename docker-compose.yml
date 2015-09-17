@@ -61,7 +61,7 @@ nodejs:
 mongo_express:
   image: knickers/mongo-express
   links:
-  -mongodb_server:mongo
+  - mongodb_server:mongo
 
 #nginx programe image
 nginx:
