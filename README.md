@@ -16,9 +16,12 @@ Docker images with:
 - ./mongodb_data		MonboDB data folder
 
 ### How to use:
-- git clone https://github.com/gzlock/docker-web-server.git
-- cd ./docker-web-server/
-- docker-compose up -d
+- $ git clone https://github.com/gzlock/docker-web-server.git
+- $ cd ./docker-web-server/
+- $ docker-compose up -d
+
+### Config
+- mongo-express account: admin,password: pass
 
 ### BTW
 /build/php/Dockerfile come from TommyLau
