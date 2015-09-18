@@ -59,7 +59,7 @@ nodejs:
   - mongodb_server:mongodb
 
 mongo_express:
-  image: docker.io/gzlock/node-mongo-express
+  image: gzlock/node-mongo-express:latest
   restart: always
   links:
   - mongodb_server:mongo
