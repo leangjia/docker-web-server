@@ -60,12 +60,10 @@ nodejs:
 
 #node-with-mongo-express image
 mongo_express:
-  image: gzlock/node-mongo-express:latest
+  image: gzlock/node-with-mongoexpress:latest
   restart: always
   links:
   - mongodb_server:mongo
-  environment:
-  - WEB_PATH=/mongo-express
 
 #nginx programe image
 nginx:
