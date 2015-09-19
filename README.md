@@ -21,6 +21,7 @@ Docker images with:
 - $ docker-compose up -d
 
 ### Config
+- mysql root password: DROWSSAP
 - mongo-express account: admin,password: pass
 
 ### BTW

@@ -58,11 +58,14 @@ nodejs:
   - mysql_server:mysql
   - mongodb_server:mongodb
 
+#node-with-mongo-express image
 mongo_express:
   image: gzlock/node-mongo-express:latest
   restart: always
   links:
   - mongodb_server:mongo
+  environment:
+  - WEB_PATH=/mongo-express
 
 #nginx programe image
 nginx:
