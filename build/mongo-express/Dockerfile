@@ -26,4 +26,4 @@ RUN npm install
 
 EXPOSE 8081
 
-CMD ['node', 'app']
+ENTRYPOINT ['node', 'app']
