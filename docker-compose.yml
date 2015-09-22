@@ -60,6 +60,7 @@ nodejs:
 
 #node-with-mongo-express image
 mongo_express:
+  #build: ./build/mongo-express
   image: gzlock/node-with-mongoexpress:latest
   restart: always
   links:
