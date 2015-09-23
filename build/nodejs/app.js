@@ -19,15 +19,18 @@ var server = http.createServer(function (request, response) {
         isFail = true;
 
     if (isExists) {//target file is exists
+        var app;
         var hasCache = require.cache.hasOwnProperty(indexFile);
 
         if (hasCache) {// has requrie cache
             if (isModified(indexFile)) {//target file is modified
+                app = require(indexFile, request, response);
+                app.onClearCache && app.onClearCache();
                 delete require.cache[indexFile];//delete cache
             }
         }
 
-        var app = require(indexFile, request, response);
+        app = require(indexFile, request, response);
 
         if (!require.cache[indexFile].hasOwnProperty('mtime')) {//add the target file modified time to cache object prototype
             require.cache[indexFile]['mtime'] = getModifiedTime(indexFile);
