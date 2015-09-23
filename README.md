@@ -15,6 +15,13 @@ Docker images with:
 - ./mysql_data			MySQL data folder
 - ./mongodb_data		MonboDB data folder
 
+### About the app.js(./build/nodejs/app.js)
+- Support multi websites,example:
+  > ./www_nodejs/a.com/index.js
+  > ./www_nodejs/b.com/index.js
+- Support Hot deployment.
+  > When modified the website index.js file(example:./www_nodejs/a.com/index.js), app.js will reload this file, Without rebooting node.js
+
 ### How to use:
 - $ git clone https://github.com/gzlock/docker-web-server.git
 - $ cd ./docker-web-server/
