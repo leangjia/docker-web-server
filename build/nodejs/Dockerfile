@@ -7,4 +7,4 @@ RUN mkdir -p /usr/src/myapp/host
 COPY ./app.js /usr/src/myapp/app.js
 
 #install plugin 
-RUN cd /usr/src/myapp && npm install express mongoose body-parser cookie-parser express-session basic-auth jade morgan debug static-favicon request
+RUN cd /usr/src/myapp && npm install express mongoose body-parser cookie-parser express-session basic-auth jade morgan debug static-favicon request express-xml-bodyparser
