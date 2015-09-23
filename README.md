@@ -16,10 +16,10 @@ Docker images with:
 - ./mongodb_data		MonboDB data folder
 
 ### About the app.js(./build/nodejs/app.js)
-- Support multi websites,example:
+* Support multi websites,example:
   * ./www_nodejs/a.com/index.js
   * ./www_nodejs/b.com/index.js
-- Support hot deployment:
+* Support hot deployment:
   * When modified the website index.js file(example:./www_nodejs/a.com/index.js), app.js will reload this file, Without rebooting node.js program
 
 ### How to use:
