@@ -1,2 +1,2 @@
 ### Description
-docker.io/Node:latest with Express,Mongoose extensions
+docker.io/Node:slim with Express,Mongoose extensions
