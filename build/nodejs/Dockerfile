@@ -2,9 +2,14 @@ FROM docker.io/node:slim
 
 MAINTAINER <gzlock> gzlock88@gmail.com
 
-RUN mkdir -p /usr/src/myapp/host
+#install plugin
+RUN mkdir -p /usr/src/myapp/host \
+    && cd /usr/src/myapp \
+    && npm install express mongoose body-parser cookie-parser express-session basic-auth jade ejs morgan debug static-favicon request express-xml-bodyparser cheerio socket.io
 
-COPY ./app.js /usr/src/myapp/app.js
 
-#install plugin 
-RUN cd /usr/src/myapp && npm install express mongoose body-parser cookie-parser express-session basic-auth jade morgan debug static-favicon request express-xml-bodyparser
+WORKDIR /usr/src/myapp
+
+COPY app.js ./
+
+CMD ["node","app"]
