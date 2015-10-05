@@ -55,7 +55,7 @@ nodejs:
   restart: always
   command: "node /usr/src/myapp/app.js"
   environment:
-  - DEBUG:true
+  - "DEBUG=true"
   links:
   - mysql_server:mysql
   - mongodb_server:mongodb
