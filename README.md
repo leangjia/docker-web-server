@@ -3,6 +3,7 @@ Docker images with:
 - docker.io/Nginx:latest
 - docker.io/PHP:5.6.12-fpm with MongoDB,gd,ldap,mbstring,mcrypt,mysql,mysqli,pdo_mysql,zip extensions.
 - docker.io/Node.js:latest with Express,Mongoose,Body-parser,Cookie-parser
+- docker.io/node-with-mongoexpress:latest
 - docker.io/MongoDB:latest
 - docker.io/MySQL:latest
 - docker.io/BusyBox:latest
@@ -30,6 +31,10 @@ Docker images with:
 ### Config
 - mysql root password: DROWSSAP
 - mongo-express account: admin,password: pass
+
+### Environment variable(Nodejs)
+- DEBUG=true
+  - Every request will be emptied require.cache,Hot deployment.
 
 ### BTW
 /build/php/Dockerfile come from TommyLau
