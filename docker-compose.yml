@@ -49,7 +49,7 @@ www_nodejs:
 #nodejs program image
 nodejs:
   #build: ./build/nodejs
-  image: gzlock/node-with-mongoose:latest
+  image: gzlock/node-base-image:latest
   volumes_from:
   - www_nodejs
   restart: always
