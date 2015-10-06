@@ -11,6 +11,7 @@ mysql_server:
   - mysql_data
   environment:
   - MYSQL_ROOT_PASSWORD=DROWSSAP
+  log_driver: "none"
 
 #mongodb data image
 mongodb_data:
@@ -23,6 +24,7 @@ mongodb_server:
   image: docker.io/mongo:latest
   volumes_from:
   - mongodb_data
+  log_driver: "none"
 
 #php file image
 www_php: 
@@ -67,6 +69,7 @@ mongo_express:
   restart: always
   links:
   - mongodb_server:mongo
+  log_driver: "none"
 
 #nginx programe image
 nginx:
@@ -84,3 +87,4 @@ nginx:
   - mongo_express
   ports:
   - "80:80"
+  log_driver: "none"
