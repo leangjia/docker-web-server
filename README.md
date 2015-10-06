@@ -32,10 +32,6 @@ Docker images with:
 - mysql root password: DROWSSAP
 - mongo-express account: admin,password: pass
 
-### Environment variable(Nodejs)
-- DEBUG=true
-  - Every request will be emptied require.cache,Hot deployment.
-
 ### BTW
 /build/php/Dockerfile come from TommyLau
 
