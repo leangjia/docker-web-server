@@ -1,3 +1,10 @@
+#backup database
+backup_data:
+  image: docker.io/busybox:latest
+  volumes:
+  - ./backup/mysql:/backup_mysql
+  - ./backup/mongodb:/backup_mongodb
+  
 #mysql data image
 mysql_data:
   image: docker.io/busybox:latest
@@ -9,6 +16,7 @@ mysql_server:
   image: docker.io/mysql:latest
   volumes_from:
   - mysql_data
+  - backup_data
   environment:
   - MYSQL_ROOT_PASSWORD=DROWSSAP
   log_driver: "none"
@@ -24,6 +32,7 @@ mongodb_server:
   image: docker.io/mongo:latest
   volumes_from:
   - mongodb_data
+  - backup_data
   log_driver: "none"
 
 #php file image
