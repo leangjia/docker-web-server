@@ -58,7 +58,6 @@ nodejs:
   volumes_from:
   - www_nodejs
   restart: always
-  command: "node /usr/src/myapp/app.js"
   links:
   - mysql_server:mysql
   - mongodb_server:mongodb
