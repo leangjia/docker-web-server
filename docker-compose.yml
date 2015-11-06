@@ -84,8 +84,6 @@ nginx:
   - php_fpm:php
   # port 8080
   - nodejs
-  # port 8081
-  - mongo_express
   ports:
   - "80:80"
   log_driver: "none"
