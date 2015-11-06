@@ -2,12 +2,25 @@
     <head>
         <title>Hello!</title>
         <style>
-            a{display: block;}
+            a{
+                float: left;
+                margin: 5px;
+                padding: 5px;
+                background: #666;
+                color: #fff;
+                border-radius: 5px;
+                font-size: 16px;
+                text-decoration: none;
+            }
+            span{
+                font-size: 12px;
+                color: #ccc;
+            }
         </style>
     </head>
     <body>
         <a href="/phpinfo.php">PHP info</a>
         <a href="/node">Node.js</a>
-        <a href="/:8081">Mongo-Express</a>
+        <a href="#" onclick="javascript:window.location.port=8081">Mongo-Express<span><br>username: admin<br/>password: pass</span></a>
     </body>
 </html>
