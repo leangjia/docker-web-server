@@ -1,20 +1,22 @@
 ### Description
 Docker images with:
-- docker.io/Nginx:latest
-- docker.io/PHP:5.6.12-fpm with MongoDB,gd,ldap,mbstring,mcrypt,mysql,mysqli,pdo_mysql,zip extensions.
-- docker.io/Node.js:latest with Express,Mongoose,Body-parser,Cookie-parser
-- docker.io/node-with-mongoexpress:latest
+- https://github.com/gzlock/docker-nginx/blob/master/nginx.conf
+- https://github.com/gzlock/docker-php-image
+- https://github.com/gzlock/docker-node-base-image
+- https://github.com/gzlock/docker-mongo-express
 - docker.io/MongoDB:latest
 - docker.io/MySQL:latest
 - docker.io/BusyBox:latest
 
 ### About Path:
-- ./build						Build the Nodejs and PHP images folder
-- ./nginx_conf			Nginx host config files folder
-- ./www_php					PHP website files folder
-- ./www_nodejs			Nodejs website files folder
-- ./mysql_data			MySQL data folder
-- ./mongodb_data		MonboDB data folder
+Path|Description
+-----------------
+./backup|MySQL and MongoDB backup datas folder
+./nginx_conf|Nginx host config files folder
+./www_php|PHP|website files folder
+./www_nodejs|Nodejs website files folder
+./mysql_data|MySQL data folder
+./mongodb_data|MonboDB data folder
 
 ### About the app.js(./build/nodejs/app.js)
 * Support multi websites,example:
@@ -25,14 +27,15 @@ Docker images with:
 
 ### How to use:
 - $ git clone https://github.com/gzlock/docker-web-server.git
-- $ cd ./docker-web-server/
+- $ cd ./docker-web-server
 - $ docker-compose up -d
 
 ### Config
-- mysql root password: DROWSSAP
-- mongo-express account: admin,password: pass
+- MySQL username: root password: DROWSSAP
+- Mongo-Express account: admin,password: pass
 
-### About DataBases(MySQL & MongoDB) Backup
+### TODO
+DataBases(MySQL & MongoDB) Backup
 
 
 ### MIT License
