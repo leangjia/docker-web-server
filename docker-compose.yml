@@ -36,7 +36,6 @@ www_php:
 
 #php program image
 php_fpm:
-  #build: ./build/php
   image: gzlock/php-with-mongodb:latest
   volumes_from:
   - www_php
@@ -53,7 +52,6 @@ www_nodejs:
 
 #nodejs program image
 nodejs:
-  #build: ./build/nodejs
   image: gzlock/node-base-image:latest
   volumes_from:
   - www_nodejs
