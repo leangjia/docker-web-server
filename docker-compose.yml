@@ -86,4 +86,5 @@ nginx:
   - nodejs
   ports:
   - "80:80"
+  - "443:443"
   log_driver: "none"
