@@ -13,7 +13,10 @@ mysql_server:
   - mysql_data
   environment:
   - MYSQL_ROOT_PASSWORD=DROWSSAP
-  log_driver: "none"
+  log_driver: "json-file"
+  log_opt:
+    max-size: "30m"
+    max-file: "1"
 
 #mongodb data image
 mongodb_data:
@@ -28,7 +31,10 @@ mongodb_server:
   image: docker.io/mongo:latest
   volumes_from:
   - mongodb_data
-  log_driver: "none"
+  log_driver: "json-file"
+  log_opt:
+    max-size: "30m"
+    max-file: "1"
 
 #php file image
 www_php: 
@@ -38,13 +44,17 @@ www_php:
 
 #php program image
 php_fpm:
+  #build: ./build/php
   image: gzlock/php-with-mongodb:latest
   volumes_from:
   - www_php
   links:
   - mysql_server:mysql
   - mongodb_server:mongodb
-  log_driver: "none"
+  log_driver: "json-file"
+  log_opt:
+    max-size: "30m"
+    max-file: "1"
 
 #nodejs file image
 www_nodejs: 
@@ -54,10 +64,12 @@ www_nodejs:
 
 #nodejs program image
 nodejs:
+  #build: ./build/nodejs
   image: gzlock/node-base-image:latest
   volumes_from:
   - www_nodejs
   restart: always
+  #command: "node /usr/src/myapp/app.js"
   links:
   - mysql_server:mysql
   - mongodb_server:mongodb
@@ -70,7 +82,10 @@ mongo_express:
   - mongodb_server:mongodb
   ports:
   - "8081:8081"
-  log_driver: "none"
+  log_driver: "json-file"
+  log_opt:
+    max-size: "30m"
+    max-file: "1"
 
 #nginx programe image
 nginx:
@@ -86,5 +101,7 @@ nginx:
   - nodejs
   ports:
   - "80:80"
-  - "443:443"
-  log_driver: "none"
+  log_driver: "json-file"
+  log_opt:
+    max-size: "30m"
+    max-file: "1"
