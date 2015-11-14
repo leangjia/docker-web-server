@@ -9,6 +9,7 @@ mongoose.connect('mongodb://mongodb/dbname');
 
 var app = express();
 
+//Before delete ./localhost/index.js cache will call this method
 app.onClearCache = function(){
     /*
      * If index.js use mongoose,then must delete mongoose model and close mongoose conect
