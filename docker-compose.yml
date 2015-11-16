@@ -86,10 +86,7 @@ mongo_express:
   - mongodb_server:mongodb
   ports:
   - "8081:8081"
-  log_driver: "json-file"
-  log_opt:
-    max-size: "1m"
-    max-file: "5"
+  log_driver: "none"
 
 #nginx programe image
 nginx:
@@ -105,7 +102,4 @@ nginx:
   - nodejs
   ports:
   - "80:80"
-  log_driver: "json-file"
-  log_opt:
-    max-size: "1m"
-    max-file: "5"
+  log_driver: "none"
