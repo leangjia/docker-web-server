@@ -51,10 +51,7 @@ php_fpm:
   links:
   - mysql_server:mysql
   - mongodb_server:mongodb
-  log_driver: "json-file"
-  log_opt:
-    max-size: "1m"
-    max-file: "5"
+  log_driver: "none"
 
 #nodejs file image
 www_nodejs: 
