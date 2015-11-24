@@ -5,7 +5,7 @@
 
 
 ### Docker images with:
-- https://github.com/gzlock/docker-nginx/blob/master/nginx.conf
+- https://github.com/gzlock/docker-nginx/
 - https://github.com/gzlock/docker-php-image
 - https://github.com/gzlock/docker-node-base-image
 - https://github.com/gzlock/docker-mongo-express
