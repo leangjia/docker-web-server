@@ -23,6 +23,7 @@ Path  | Description
 ./www_nodejs  | Nodejs website files folder
 ./mysql_data  | MySQL data folder
 ./mongodb_data | MonboDB data folder
+./ssl | Store ssl files(.key & .crt)
 
 ### About the app.js(https://github.com/gzlock/docker-node-base-image/blob/master/app.js)
 * Support multi websites,example:
