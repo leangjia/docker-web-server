@@ -90,6 +90,7 @@ nginx:
   image: docker.io/gzlock/nginx:latest
   volumes:
   - ./nginx_conf:/etc/nginx/conf.d
+  - ./ssl:/ssl
   volumes_from:
   - www_php
   links:
